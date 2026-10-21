@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AMADOU Press Kit</title>
+<meta name="description" content="AMADOU press kit: sets, press photos, bio and booking.">
+<meta property="og:title" content="AMADOU Press Kit">
+<meta property="og:description" content="Sets, press photos, bio and booking.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#060608">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+
+<script>
+/* ============================================================
+   EDIT HERE — everything you will ever need to change.
+   ============================================================ */
+const EPK = {
+  // SOUNDCLOUD PLAYERS
+  // On SoundCloud: open the set/playlist → Share → Embed → copy the code,
+  // then paste it between the two backticks ` ` below.
+  //
+  // Playlist of demo sets, in its own section under the top.
+  demoSets: `<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A1916751631%3Fsecret_token%3Ds-uMVoihAUB8J&color=%230b0404&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>`,
+
+  // Set in the box next to the photo at the top.
+  featuredSet: `<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2311871039%3Fsecret_token%3Ds-axogDmxeIVE&color=%23090604&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>`,
+  featuredSetTitle: "INO WELI",
+
+  // TOP LINE under the name
+  tagline: "DJ and producer · Paris",
+
+  // BIG PHOTO at the top (file in the img/ folder)
+  heroPhoto: "img/hero.jpg",
+
+  // PRESS PHOTOS: put the .jpg in the press/ folder and add a line here.
+  // Order here = order on the page. "focus" (optional) moves the crop: "50% 30%" = centre, a bit higher.
+  photos: [
+    { file: "press/AMADOU_Press_01_1434x1793.jpg", focus: "50% 55%" },
+    { file: "press/AMADOU_Press_02_2576x2576.jpg", focus: "50% 40%" },
+    { file: "press/AMADOU_Press_03_1124x1723.jpg", focus: "50% 30%" },
+    { file: "press/AMADOU_Press_04_2061x2576.jpg", focus: "45% 50%" },
+    { file: "press/AMADOU_Press_05_3264x4928.jpg" }
+  ],
+  // Zip for the DOWNLOAD ALL button. Remake it if you change the photos (or set "" to hide the button).
+  photosZip: "press/AMADOU_Press_Photos.zip",
+
+  // VIDEOS: put the .mp4 (and a cover .jpg) in the video/ folder and add a line here.
+  // w/h = the video's pixel size.
+  videos: [
+    { file: "video/AMADOU_Clip_01_1920x1080.mp4", poster: "video/AMADOU_Clip_01_poster.jpg", w: 1920, h: 1080 }
+  ],
+
+  // BIO: one line per paragraph, inside quotes.
+  bio: [
+    "Based in Paris, AMADOU is a DJ and producer whose practice channels his cultural background in an intentional approach where rhythm becomes a way of shaping space, stretching time, and allowing moments of collective presence to emerge.",
+    "Behind the decks, AMADOU deploys a universe where dark galloping grooves, frenetic tribal drums and ethereal atmospheres meet. His sets unfold as gradual ascents where tension lingers, rhythms intertwine, and where the dancefloor slips into a deep, visceral immersion."
+  ],
+
+  // Booking email. When you get your domain, change it here only.
+  email: "chmrcorp@gmail.com",
+
+  instagram: "https://www.instagram.com/amadou.chmr",
+  soundcloud: "https://soundcloud.com/amad0u",
+
+  updated: "October 2026"
+};
+</script>
+
+<style>
+/* Layout: floating glass nav; hero = name + set | live photo; then sets, one-row photo carousel, bio, booking. */
+:root {
+  --bg: #060608;
+  --text: #f5f5f7;
+  --muted: rgba(245,245,247,.56);
+  --faint: rgba(245,245,247,.34);
+  --glass: rgba(255,255,255,.055);
+  --glass-strong: rgba(255,255,255,.09);
+  --edge: rgba(255,255,255,.11);
+  --edge-hi: rgba(255,255,255,.22);
+  --glow-a: rgba(255,46,116,.20);   /* from the magenta photo */
+  --glow-b: rgba(47,211,176,.13);   /* from the teal photo */
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --r-lg: 28px;
+  --r-md: 20px;
+  --wrap: 1160px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+  font: 17px/1.55 var(--sans); -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* ambient light behind the glass */
+body::before {
+  content: ""; position: fixed; inset: -20vmax; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(38vmax 30vmax at 18% 12%, var(--glow-a), transparent 70%),
+    radial-gradient(40vmax 34vmax at 88% 78%, var(--glow-b), transparent 70%);
+  filter: blur(40px);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { text-transform: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+
+.wrap {
+  max-width: var(--wrap); margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--edge);
+  box-shadow: inset 0 1px 0 var(--edge-hi), 0 20px 60px -20px rgba(0,0,0,.6);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  backdrop-filter: blur(28px) saturate(170%);
+}
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+
+/* nav */
+.nav { position: sticky; top: calc(12px + env(safe-area-inset-top, 0px)); z-index: 20; margin-top: calc(12px + env(safe-area-inset-top, 0px)); }
+.nav .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 10px 10px 22px; border-radius: 999px; }
+.nav .mark { font-weight: 700; letter-spacing: .12em; font-size: 14px; text-decoration: none; }
+.nav nav { display: flex; gap: 4px; }
+.nav nav a { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 14px; border-radius: 999px; transition: background .2s, color .2s; }
+.nav nav a:hover { color: var(--text); background: var(--glass-strong); }
+@property --spin { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.nav nav a.nav-book { position: relative; color: var(--text); background: rgba(255,255,255,.06); }
+.nav nav a.nav-book::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: conic-gradient(from var(--spin), #ff8ac2, #9fe8ff, #b9a3ff, #8affd6, #ffd99a, #ff8ac2);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .6; animation: spin 7s linear infinite;
+}
+.nav nav a.nav-book:hover::before { opacity: .9; }
+@keyframes spin { to { --spin: 360deg; } }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 22px; border-radius: 999px;
+  font: 600 15px/1 var(--sans); text-decoration: none; cursor: pointer; color: var(--text);
+  background: var(--glass-strong); border: 1px solid var(--edge); box-shadow: inset 0 1px 0 var(--edge-hi);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  transition: background .2s, box-shadow .2s, transform .45s cubic-bezier(.34, 1.7, .5, 1);
+  -webkit-tap-highlight-color: transparent; user-select: none;
+}
+.btn:hover { background: rgba(255,255,255,.14); }
+.btn:active { transform: scale(.92); transition-duration: .2s, .2s, .08s; }
+
+/* glass bubbles in the hero */
+.bubble {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; margin: 0;
+}
+.tag.bubble { font-size: 15px; font-weight: 500; letter-spacing: .04em; color: var(--muted); }
+.btn.solid { background: var(--text); color: #0a0a0c; border-color: transparent; box-shadow: none; }
+.btn.solid:hover { background: #fff; }
+.btn small { font-weight: 500; font-size: 12px; opacity: .6; text-transform: none; }
+.bio p { letter-spacing: .01em; }
+.bio-copy { display: grid; gap: 1em; min-width: 0; }
+.card .value { letter-spacing: .02em; }
+
+/* hero */
+.hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(20px, 3.5vw, 44px); padding-block: clamp(36px, 6vw, 72px) clamp(40px, 6vw, 80px); align-items: end; }
+.hero-text { min-width: 0; display: grid; gap: 22px; }
+.name { margin: 0; font-weight: 700; font-size: clamp(60px, 9.6vw, 128px); line-height: .9; letter-spacing: -.045em; color: var(--text); }
+.tag { margin: 0; font-size: 18px; color: var(--muted); }
+.tag-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-photo { margin: 0; min-width: 0; }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: var(--r-lg); border: 1px solid var(--edge); }
+
+/* players */
+.player { border-radius: var(--r-lg); padding: 10px; display: grid; gap: 8px; }
+.player-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 6px 10px 2px; }
+.player-head a { font-size: 13px; color: var(--muted); text-decoration: none; }
+.player-head a:hover { color: var(--text); }
+.player .frame { border-radius: calc(var(--r-lg) - 10px); overflow: hidden; background: #000; }
+.player iframe { display: block; width: 100%; border: 0; }
+
+/* sections */
+section.block > .wrap { padding-block: clamp(36px, 6vw, 72px); display: grid; gap: 24px; }
+.head { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.head > div:not(.arrows) { display: grid; gap: 6px; }
+h2 { margin: 0; font-size: clamp(28px, 4vw, 40px); line-height: 1.05; letter-spacing: -.03em; font-weight: 700; text-wrap: balance; }
+
+/* carousel */
+.carousel { position: relative; }
+.track {
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * 16px) / 3); gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain;
+  scrollbar-width: none; padding-bottom: 2px;
+}
+.track::-webkit-scrollbar { display: none; }
+.slide { margin: 0; position: relative; scroll-snap-align: start; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--edge); background: #111; }
+.slide img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .5s ease; }
+.slide:hover img { transform: scale(1.025); }
+.slide figcaption { position: absolute; right: 12px; bottom: 12px; }
+.slide .meta { font-size: 12px; color: var(--muted); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.slide .dl { display: inline-block; font: 600 13px/1 var(--sans); letter-spacing: .04em; text-decoration: none; padding: 11px 16px; border-radius: 999px; background: var(--text); color: #0a0a0c; white-space: nowrap; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+.arrow {
+  position: absolute; top: 50%; z-index: 2; width: 44px; height: 44px; min-height: 0; padding: 0; justify-content: center;
+  font-size: 22px; line-height: 1; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22);
+  -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%);
+  translate: 0 -50%; transition: opacity .25s, background .2s, transform .45s cubic-bezier(.34, 1.7, .5, 1);
+}
+.arrow.next { right: 12px; }
+.arrow.prev { left: 12px; }
+.arrow:hover { background: rgba(255,255,255,.2); }
+.arrow:disabled { opacity: 0; pointer-events: none; }
+
+/* videos */
+.track.vtrack { grid-auto-columns: calc((100% - 16px) / 2); }
+.track.vtrack.single { grid-auto-columns: 100%; }
+.vslide video { display: block; width: 100%; height: auto; object-fit: cover; background: #000; }
+.vslide figcaption { top: 12px; bottom: auto; }
+@media (max-width: 860px) { .track.vtrack { grid-auto-columns: 88%; } .track.vtrack.single { grid-auto-columns: 100%; } }
+
+/* bio */
+.bio { border-radius: var(--r-lg); padding: clamp(22px, 3.5vw, 36px); display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; }
+.bio p { margin: 0; font-size: clamp(18px, 2vw, 21px); line-height: 1.55; max-width: 60ch; text-wrap: pretty; }
+
+/* booking */
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+.card { border-radius: var(--r-lg); padding: 24px; display: grid; gap: 16px; align-content: start; min-width: 0; }
+.card .value { font-size: clamp(19px, 2.4vw, 24px); font-weight: 600; letter-spacing: -.01em; overflow-wrap: anywhere; user-select: all; }
+.card .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.links { display: grid; }
+.links a { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--edge); text-decoration: none; font-weight: 500; }
+.links a:last-child { border-bottom: 0; }
+.links a span:last-child { color: var(--muted); }
+.links a:hover span:last-child { color: var(--text); }
+
+footer .wrap { padding-block: 24px 44px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--faint); }
+
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 16px); opacity: 0; padding: 12px 20px; border-radius: 999px; font: 600 14px/1 var(--sans); transition: .25s; pointer-events: none; z-index: 30; }
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; align-items: start; }
+  .hero-photo { order: -1; }
+  .hero-photo img { aspect-ratio: 1 / 1; }
+  .name { font-size: 19vw; }
+  .track { grid-auto-columns: 72%; }
+  .bio { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .nav nav a.opt { display: none; }
+  .nav nav a { padding: 8px 10px; }
+  .track { grid-auto-columns: 84%; }
+  .tag-row { flex-wrap: nowrap; gap: 8px; }
+  .tag-row .bubble { min-height: 42px; padding: 0 13px; font-size: 11.5px; letter-spacing: .03em; white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html, .track { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .nav nav a.nav-book::before { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav wrap">
+  <div class="bar glass">
+    <a class="mark" href="#top">AMADOU</a>
+    <nav aria-label="Sections">
+      <a class="opt" href="#sets">Sets</a>
+      <a class="opt" href="#videos">Videos</a>
+      <a href="#photos">Photos</a>
+      <a class="opt" href="#bio">Bio</a>
+      <a class="nav-book" href="#booking">Booking</a>
+    </nav>
+  </div>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1 class="name">AMADOU</h1>
+        <div class="tag-row">
+          <p class="tag bubble glass" id="tagline"></p>
+        </div>
+        <div class="player glass" id="hero-player">
+          <div class="player-head"><span class="eyebrow" id="hero-label">INO WELI</span><a id="hero-link" href="#" target="_blank" rel="noopener">SoundCloud ↗</a></div>
+          <div class="frame"><iframe id="hero-frame" title="AMADOU, INO WELI" height="300" allow="autoplay; encrypted-media"></iframe></div>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img id="hero-img" alt="AMADOU behind the decks" width="924" height="1400">
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="sets">
+    <div class="wrap">
+      <div class="head"><div><h2>Demo sets</h2></div></div>
+      <div class="player glass">
+        <div class="frame"><iframe id="demo-frame" title="AMADOU demo sets" height="400" allow="autoplay; encrypted-media" loading="lazy"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="videos">
+    <div class="wrap">
+      <div class="head">
+        <div><h2>Videos</h2></div>
+      </div>
+      <div class="carousel">
+        <div class="track vtrack" id="vtrack" tabindex="0" aria-label="Videos"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="photos">
+    <div class="wrap">
+      <div class="head">
+        <div><h2>Photos</h2></div>
+        <a class="btn" id="zip-link" href="#" download>Download all <small>.zip</small></a>
+      </div>
+      <div class="carousel">
+        <button class="btn arrow prev" type="button" id="prev" aria-label="Previous photos">‹</button>
+        <div class="track" id="track" tabindex="0" aria-label="Press photos"></div>
+        <button class="btn arrow next" type="button" id="next" aria-label="Next photos">›</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="bio">
+    <div class="wrap">
+      <div class="head"><div><h2>Bio</h2></div></div>
+      <div class="bio glass">
+        <div id="bio-text" class="bio-copy"></div>
+        <button class="btn" type="button" id="copy-bio">Copy bio</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="booking">
+    <div class="wrap">
+      <div class="head"><div><h2>Booking</h2></div></div>
+      <div class="contact">
+        <div class="card glass">
+          <span class="eyebrow">Email</span>
+          <span class="value" id="email-text"></span>
+          <div class="row">
+            <button class="btn solid" type="button" id="copy-email">Copy email</button>
+            <a class="btn" id="email-link" href="#">Open mail app</a>
+          </div>
+        </div>
+        <div class="card glass">
+          <span class="eyebrow">Elsewhere</span>
+          <div class="links">
+            <a id="ig-link" href="#" target="_blank" rel="noopener"><span>Instagram</span><span>@amadou.chmr ↗</span></a>
+            <a id="sc-link" href="#" target="_blank" rel="noopener"><span>SoundCloud</span><span>amad0u ↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>AMADOU · Press kit</span>
+    <span id="updated"></span>
+  </div>
+</footer>
+
+<div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  // Turn an embed code (or a public soundcloud.com link) into a player URL.
+  function playerSrc(value, visual) {
+    const v = (value || "").trim();
+    if (!v) return null;
+    let u;
+    const m = v.match(/src=["']([^"']+)["']/);
+    const raw = m ? m[1] : (/^https:\/\/w\.soundcloud\.com\/player/.test(v) ? v : null);
+    if (raw) {
+      try { u = new URL(raw.replace(/&amp;/g, "&")); } catch (e) { return null; }
+    } else if (/^https:\/\/(www\.|m\.)?soundcloud\.com\/[^/]+\/./.test(v) && !/\/s-[A-Za-z0-9]+/.test(v)) {
+      u = new URL("https://w.soundcloud.com/player/");
+      u.searchParams.set("url", v);
+    } else {
+      return null;
+    }
+    // visual=true everywhere: artwork background instead of SoundCloud's white list view
+    const opts = { color: "#f5f5f7", auto_play: "false", hide_related: "true", show_comments: "false",
+                   show_user: "true", show_reposts: "false", show_teaser: "false", visual: "true" };
+    Object.entries(opts).forEach(([k, val]) => u.searchParams.set(k, val));
+    return u.toString();
+  }
+
+  const $ = id => document.getElementById(id);
+
+  // Players
+  const demo = playerSrc(EPK.demoSets);
+  const feat = playerSrc(EPK.featuredSet);
+  $("hero-link").href = EPK.soundcloud;
+  if (feat) {
+    $("hero-frame").src = feat;
+    $("hero-label").textContent = EPK.featuredSetTitle;
+    if (demo) $("demo-frame").src = demo; else $("sets").hidden = true;
+  } else if (demo) {
+    $("hero-frame").src = demo;
+    $("hero-label").textContent = "Demo sets";
+    $("sets").hidden = true;
+  } else {
+    $("hero-frame").parentNode.hidden = true;
+    $("hero-label").textContent = "Sets";
+    $("sets").hidden = true;
+  }
+
+  // Photo carousel
+  const track = $("track");
+  (EPK.photos || []).forEach((p, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "slide";
+    fig.innerHTML =
+      '<img src="' + p.file + '" alt="AMADOU press photo ' + (i + 1) + '" style="object-position:' + (p.focus || "50% 50%") + '" loading="' + (i < 3 ? "eager" : "lazy") + '" draggable="false">' +
+      '<figcaption><a class="dl" href="' + p.file + '" download>Download</a></figcaption>';
+    track.appendChild(fig);
+  });
+  if (EPK.photosZip) $("zip-link").href = EPK.photosZip; else $("zip-link").hidden = true;
+  $("hero-img").src = EPK.heroPhoto;
+  $("tagline").textContent = EPK.tagline;
+  $("bio-text").innerHTML = "";
+  (EPK.bio || []).forEach(t => { const el = document.createElement("p"); el.textContent = t; $("bio-text").appendChild(el); });
+  carousel(track, $("prev"), $("next"));
+
+  // Videos
+  const vtrack = $("vtrack");
+  const vids = EPK.videos || [];
+  if (!vids.length) $("videos").hidden = true;
+  if (vids.length === 1) vtrack.classList.add("single");
+  vids.forEach(v => {
+    const fig = document.createElement("figure");
+    fig.className = "slide vslide";
+    const poster = v.poster || "";
+    fig.innerHTML =
+      '<video controls playsinline preload="none" poster="' + poster + '" style="aspect-ratio:' + v.w + ' / ' + v.h + '">' +
+        '<source src="' + v.file + '" type="video/mp4"></video>' +
+      '<figcaption><a class="dl" href="' + v.file + '" download>Download</a></figcaption>';
+    vtrack.appendChild(fig);
+  });
+
+  function carousel(track, prev, next) {
+    const slides = [...track.children];
+    const step = () => slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+    function update() {
+      const max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    }
+    prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+    next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+    track.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+    track.addEventListener("keydown", e => {
+      if (e.target !== track) return;
+      if (e.key === "ArrowRight") { e.preventDefault(); next.click(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
+    });
+    addEventListener("resize", update);
+    update();
+  }
+
+  // Contact
+  $("email-text").textContent = EPK.email;
+  $("email-link").href = "mailto:" + EPK.email + "?subject=" + encodeURIComponent("Booking enquiry: AMADOU");
+  $("ig-link").href = EPK.instagram;
+  $("sc-link").href = EPK.soundcloud;
+  $("updated").textContent = "Updated " + EPK.updated;
+
+  // Copy buttons
+  const toast = $("toast");
+  let t;
+  function say(msg) { toast.textContent = msg; toast.classList.add("on"); clearTimeout(t); t = setTimeout(() => toast.classList.remove("on"), 1800); }
+  function copy(text, done, el) {
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say("Selected. Press Ctrl/Cmd+C"); };
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => say(done), fallback); else fallback();
+  }
+  $("copy-email").addEventListener("click", () => copy(EPK.email, "Email copied", $("email-text")));
+  $("copy-bio").addEventListener("click", () => { const el = $("bio-text"); copy([...el.querySelectorAll("p")].map(p => p.textContent.trim()).join("\n\n"), "Bio copied", el); });
+})();
+</script>
+</body>
+</html>
